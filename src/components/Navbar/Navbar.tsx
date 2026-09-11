@@ -23,27 +23,27 @@ const Navbar = () => {
             className="w-24 md:w-28"
           />
 
-          <ul className="hidden md:flex items-center gap-6 text-sm text-gray-600">
-            <li className="text-pink-500 cursor-pointer">
+          <div className="hidden md:flex items-center gap-6 text-sm text-gray-600">
+            <a href="#" className="text-pink-500">
               Home
-            </li>
+            </a>
 
-            <li className="cursor-pointer">
+            <a href="#">
               Technologies
-            </li>
+            </a>
 
-            <li className="cursor-pointer">
+            <a href="#">
               Projects
-            </li>
+            </a>
 
-            <li className="cursor-pointer">
+            <a href="#">
               About
-            </li>
+            </a>
 
-            <li className="cursor-pointer">
+            <a href="#">
               Contact
-            </li>
-          </ul>
+            </a>
+          </div>
 
           <div className="flex items-center gap-3">
 
@@ -60,29 +60,29 @@ const Navbar = () => {
         </div>
 
         {menuOpen && (
-          <ul className="md:hidden flex flex-col gap-3 pt-4 pb-2 text-sm text-gray-600">
+          <div className="md:hidden flex flex-col gap-3 pt-4 pb-2 text-sm text-gray-600">
 
-            <li className="text-pink-500 cursor-pointer">
+            <a href="#" className="text-pink-500">
               Home
-            </li>
+            </a>
 
-            <li className="cursor-pointer">
+            <a href="#">
               Technologies
-            </li>
+            </a>
 
-            <li className="cursor-pointer">
+            <a href="#">
               Projects
-            </li>
+            </a>
 
-            <li className="cursor-pointer">
+            <a href="#">
               About
-            </li>
+            </a>
 
-            <li className="cursor-pointer">
+            <a href="#">
               Contact
-            </li>
+            </a>
 
-          </ul>
+          </div>
         )}
 
       </div>
