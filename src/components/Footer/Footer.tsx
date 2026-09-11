@@ -15,22 +15,18 @@ const Footer = () => {
               className="w-28 mx-auto md:mx-0"
             />
 
-            <p className="text-sm text-gray-500 mt-4 text-center md:text-left max-w-[400px] mx-auto md:mx-0">
+            <p className="text-sm text-gray-500 mt-4 text-center md:text-left max-w-[500px] mx-auto md:mx-0">
               Curated tools, technologies, and resources for developers
               building modern software.
             </p>
 
-            <ul className="flex justify-center md:justify-start gap-3 mt-5 text-sm">
-              <li>GitHub</li>
-
-              <li className="md:hidden">•</li>
-
-              <li>Twitter</li>
-
-              <li className="md:hidden">•</li>
-
-              <li>LinkedIn</li>
-            </ul>
+            <div className="flex justify-center md:justify-start gap-3 mt-5 text-sm">
+              <a href="#">GitHub</a>
+              <span className="md:hidden">•</span>
+              <a href="#">Twitter</a>
+              <span className="md:hidden">•</span>
+              <a href="#">LinkedIn</a>
+            </div>
 
           </div>
 
@@ -40,11 +36,11 @@ const Footer = () => {
               PRODUCT
             </h3>
 
-            <ul className="flex flex-col gap-3 text-sm text-gray-500">
-              <li>Home</li>
-              <li>Technologies</li>
-              <li>Projects</li>
-            </ul>
+            <div className="flex flex-col gap-3 text-sm text-gray-500">
+              <a href="#">Home</a>
+              <a href="#">Technologies</a>
+              <a href="#">Projects</a>
+            </div>
 
           </div>
 
@@ -54,11 +50,11 @@ const Footer = () => {
               COMPANY
             </h3>
 
-            <ul className="flex flex-col gap-3 text-sm text-gray-500">
-              <li>About</li>
-              <li>Contact</li>
-              <li>Careers</li>
-            </ul>
+            <div className="flex flex-col gap-3 text-sm text-gray-500">
+              <a href="#">About</a>
+              <a href="#">Contact</a>
+              <a href="#">Careers</a>
+            </div>
 
           </div>
 
@@ -68,10 +64,10 @@ const Footer = () => {
               LEGAL
             </h3>
 
-            <ul className="flex flex-col gap-3 text-sm text-gray-500">
-              <li>Privacy Policy</li>
-              <li>Terms of Service</li>
-            </ul>
+            <div className="flex flex-col gap-3 text-sm text-gray-500">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+            </div>
 
           </div>
 
@@ -83,10 +79,10 @@ const Footer = () => {
             © 2026 Dev Stack. All Rights Reserved
           </p>
 
-          <ul className="flex gap-6">
-            <li>Privacy</li>
-            <li>Terms</li>
-          </ul>
+          <div className="flex gap-6">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+          </div>
 
         </div>
 
