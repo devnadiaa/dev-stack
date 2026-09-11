@@ -28,9 +28,7 @@ const Technology = () => {
   }, []);
 
   const addToStack = (technology: Technology) => {
-    const alreadyAdded = stack.some(
-      (item) => item.id === technology.id
-    );
+    const alreadyAdded = stack.some((item) => item.id === technology.id);
 
     if (alreadyAdded) {
       toast.warning("This technology is already in your stack!");
@@ -42,11 +40,7 @@ const Technology = () => {
   };
 
   const removeFromStack = (id: string) => {
-    const remaining = stack.filter(
-      (item) => item.id !== id
-    );
-
-    setStack(remaining);
+    setStack(stack.filter((item) => item.id !== id));
     toast.info("Technology removed from your stack!");
   };
 
@@ -56,11 +50,7 @@ const Technology = () => {
   };
 
   if (loading) {
-    return (
-      <div className="text-center py-10">
-        Loading technologies...
-      </div>
-    );
+    return <p className="text-center py-10">Loading technologies...</p>;
   }
 
   return (
@@ -72,9 +62,7 @@ const Technology = () => {
         <div className="mb-8">
           <h2 className="text-3xl font-bold">
             Explore the{" "}
-            <span className="gradient-text">
-              Technologies
-            </span>
+            <span className="gradient-text">Technologies</span>
           </h2>
 
           <p className="text-gray-500 text-sm mt-2">
@@ -87,8 +75,7 @@ const Technology = () => {
           <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
 
             {technologies.map((technology) => {
-
-              const isAdded = stack.some(
+              const alreadyAdded = stack.some(
                 (item) => item.id === technology.id
               );
 
@@ -96,7 +83,7 @@ const Technology = () => {
                 <div
                   key={technology.id}
                   className={`border rounded-xl p-5 bg-white shadow-sm ${
-                    isAdded
+                    alreadyAdded
                       ? "border-pink-500"
                       : "border-gray-200"
                   }`}
@@ -107,10 +94,10 @@ const Technology = () => {
                     <img
                       src={technology.icon}
                       alt={technology.name}
-                      className="w-10 h-10 shrink-0"
+                      className="w-10 h-10"
                     />
 
-                    <span className="text-xs bg-sky-50 text-sky-500 border border-sky-100 px-2 py-1 rounded-full whitespace-nowrap">
+                    <span className="text-xs bg-sky-50 text-sky-500 border border-sky-100 px-2 py-1 rounded-full">
                       {technology.badge}
                     </span>
 
@@ -124,17 +111,15 @@ const Technology = () => {
                     {technology.description}
                   </p>
 
-                  <div className="flex items-center gap-2 mt-4 text-xs min-w-0">
+                  <div className="flex items-center gap-2 mt-4 text-xs">
 
-                    <span className="bg-gray-100 px-2 py-1 rounded truncate min-w-0">
+                    <span className="bg-gray-100 px-2 py-1 rounded">
                       {technology.category}
                     </span>
 
-                    <span className="whitespace-nowrap shrink-0">
-                      {technology.difficulty}
-                    </span>
+                    <span>{technology.difficulty}</span>
 
-                    <span className="flex items-center gap-1 whitespace-nowrap shrink-0 ml-auto">
+                    <span className="ml-auto">
                       ⭐ {technology.rating}
                     </span>
 
@@ -142,14 +127,14 @@ const Technology = () => {
 
                   <button
                     onClick={() => addToStack(technology)}
-                    disabled={isAdded}
+                    disabled={alreadyAdded}
                     className={`w-full mt-4 py-2 rounded-md text-sm ${
-                      isAdded
+                      alreadyAdded
                         ? "bg-pink-100 text-pink-500 border border-pink-200"
                         : "bg-gray-900 text-white"
                     }`}
                   >
-                    {isAdded
+                    {alreadyAdded
                       ? "✓ Added to Stack"
                       : "Add to Stack"}
                   </button>
@@ -194,37 +179,35 @@ const Technology = () => {
 
               <div className="mt-5 space-y-3">
 
-                {stack.map((item) => (
+                {stack.map((technology) => (
 
                   <div
-                    key={item.id}
+                    key={technology.id}
                     className="flex items-center justify-between border border-gray-200 rounded-lg p-3"
                   >
 
                     <div className="flex items-center gap-3">
 
                       <img
-                        src={item.icon}
-                        alt={item.name}
+                        src={technology.icon}
+                        alt={technology.name}
                         className="w-8 h-8"
                       />
 
                       <div>
-
                         <p className="text-sm font-medium">
-                          {item.name}
+                          {technology.name}
                         </p>
 
                         <p className="text-xs text-gray-500">
-                          {item.category}
+                          {technology.category}
                         </p>
-
                       </div>
 
                     </div>
 
                     <button
-                      onClick={() => removeFromStack(item.id)}
+                      onClick={() => removeFromStack(technology.id)}
                       className="text-red-500 text-sm"
                     >
                       ✕
@@ -242,7 +225,6 @@ const Technology = () => {
                 </button>
 
               </div>
-
             )}
 
           </div>
