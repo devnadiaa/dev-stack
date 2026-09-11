@@ -58,7 +58,6 @@ const Technology = () => {
       <ToastContainer position="top-center" />
 
       <section className="max-w-6xl mx-auto px-5 py-10">
-
         <div className="mb-8">
           <h2 className="text-3xl font-bold">
             Explore the{" "}
@@ -66,14 +65,12 @@ const Technology = () => {
           </h2>
 
           <p className="text-gray-500 text-sm mt-2">
-            Pick one technology per category to build your ideal stack.
+            Choose technologies to build your ideal stack.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-
           <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-
             {technologies.map((technology) => {
               const alreadyAdded = stack.some(
                 (item) => item.id === technology.id
@@ -88,41 +85,38 @@ const Technology = () => {
                       : "border-gray-200"
                   }`}
                 >
-
                   <div className="flex items-start justify-between gap-3">
+                    <div className="flex items-center gap-3 md:block">
+                      <img
+                        src={technology.icon}
+                        alt={technology.name}
+                        className="w-10 h-10"
+                      />
 
-                    <img
-                      src={technology.icon}
-                      alt={technology.name}
-                      className="w-10 h-10"
-                    />
+                      <h3 className="text-lg font-semibold md:mt-4">
+                        {technology.name}
+                      </h3>
+                    </div>
 
                     <span className="text-xs bg-sky-50 text-sky-500 border border-sky-100 px-2 py-1 rounded-full">
                       {technology.badge}
                     </span>
-
                   </div>
 
-                  <h3 className="text-lg font-semibold mt-4">
-                    {technology.name}
-                  </h3>
-
-                  <p className="text-gray-500 text-sm mt-2 min-h-16">
+                  <p className="text-gray-500 text-sm mt-4 min-h-16">
                     {technology.description}
                   </p>
 
                   <div className="flex items-center gap-2 mt-4 text-xs">
-
                     <span className="bg-gray-100 px-2 py-1 rounded">
                       {technology.category}
                     </span>
 
                     <span>{technology.difficulty}</span>
 
-                    <span className="ml-auto">
+                    <span className="ml-auto whitespace-nowrap">
                       ⭐ {technology.rating}
                     </span>
-
                   </div>
 
                   <button
@@ -135,20 +129,16 @@ const Technology = () => {
                     }`}
                   >
                     {alreadyAdded
-                      ? "✓ Added to Stack"
+                      ? "✓ Already Selected"
                       : "Add to Stack"}
                   </button>
-
                 </div>
               );
             })}
-
           </div>
 
           <div className="border border-gray-200 rounded-xl p-5 bg-white shadow-sm h-fit">
-
             <div className="flex items-center justify-between">
-
               <h3 className="text-xl font-semibold">
                 Your Stack
               </h3>
@@ -156,13 +146,10 @@ const Technology = () => {
               <span className="text-sm text-gray-500">
                 {stack.length} Selected
               </span>
-
             </div>
 
             {stack.length === 0 ? (
-
               <div className="text-center py-10">
-
                 <p className="text-sm text-gray-500">
                   No technologies selected yet.
                 </p>
@@ -172,22 +159,15 @@ const Technology = () => {
                     Your stack is empty.
                   </p>
                 </div>
-
               </div>
-
             ) : (
-
               <div className="mt-5 space-y-3">
-
                 {stack.map((technology) => (
-
                   <div
                     key={technology.id}
                     className="flex items-center justify-between border border-gray-200 rounded-lg p-3"
                   >
-
                     <div className="flex items-center gap-3">
-
                       <img
                         src={technology.icon}
                         alt={technology.name}
@@ -203,7 +183,6 @@ const Technology = () => {
                           {technology.category}
                         </p>
                       </div>
-
                     </div>
 
                     <button
@@ -212,9 +191,7 @@ const Technology = () => {
                     >
                       ✕
                     </button>
-
                   </div>
-
                 ))}
 
                 <button
@@ -223,14 +200,10 @@ const Technology = () => {
                 >
                   Remove All
                 </button>
-
               </div>
             )}
-
           </div>
-
         </div>
-
       </section>
     </>
   );

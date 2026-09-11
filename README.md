@@ -47,4 +47,4 @@ Conditional rendering means showing something based on a condition. I used it to
 
 ### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 
-Props are used to send data from a parent component to a child component. A child can send something back by using a function passed from the parent. I did not use props in this project.c
+Props are used to send data from a parent component to a child component. A child can send something back by using a function passed from the parent. I did not use props in this project.
