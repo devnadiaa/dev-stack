@@ -41,12 +41,12 @@ const Technology = () => {
 
   const removeFromStack = (id: string) => {
     setStack(stack.filter((item) => item.id !== id));
-    toast.info("Technology removed from your stack!");
+    toast.error("Technology removed from your stack!");
   };
 
   const removeAll = () => {
     setStack([]);
-    toast.info("All technologies removed!");
+    toast.error("All technologies removed!");
   };
 
   if (loading) {
@@ -55,7 +55,7 @@ const Technology = () => {
 
   return (
     <>
-      <ToastContainer position="top-right" />
+      <ToastContainer position="top-center" />
 
       <section className="max-w-6xl mx-auto px-5 py-10">
 
