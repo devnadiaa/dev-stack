@@ -7,6 +7,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white">
       <div className="max-w-6xl mx-auto px-5 py-3">
+
         <div className="flex items-center justify-between">
 
           <button
@@ -16,17 +17,36 @@ const Navbar = () => {
             ☰
           </button>
 
-          <img src={logo} alt="Dev Stack" className="w-24" />
+          <img
+            src={logo}
+            alt="Dev Stack"
+            className="w-24 md:w-28"
+          />
 
-          <div className="hidden md:flex items-center gap-6 text-sm text-gray-600">
-            <a href="#" className="text-pink-500">Home</a>
-            <a href="#">Technologies</a>
-            <a href="#">Projects</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-          </div>
+          <ul className="hidden md:flex items-center gap-6 text-sm text-gray-600">
+            <li className="text-pink-500 cursor-pointer">
+              Home
+            </li>
+
+            <li className="cursor-pointer">
+              Technologies
+            </li>
+
+            <li className="cursor-pointer">
+              Projects
+            </li>
+
+            <li className="cursor-pointer">
+              About
+            </li>
+
+            <li className="cursor-pointer">
+              Contact
+            </li>
+          </ul>
 
           <div className="flex items-center gap-3">
+
             <button className="text-sm text-gray-700">
               Sign In
             </button>
@@ -34,19 +54,37 @@ const Navbar = () => {
             <button className="bg-pink-500 text-white text-sm px-4 py-2 rounded-full">
               Sign Up
             </button>
+
           </div>
 
         </div>
 
         {menuOpen && (
-          <div className="md:hidden flex flex-col gap-3 pt-4 pb-2 text-sm text-gray-600">
-            <a href="#" className="text-pink-500">Home</a>
-            <a href="#">Technologies</a>
-            <a href="#">Projects</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-          </div>
+          <ul className="md:hidden flex flex-col gap-3 pt-4 pb-2 text-sm text-gray-600">
+
+            <li className="text-pink-500 cursor-pointer">
+              Home
+            </li>
+
+            <li className="cursor-pointer">
+              Technologies
+            </li>
+
+            <li className="cursor-pointer">
+              Projects
+            </li>
+
+            <li className="cursor-pointer">
+              About
+            </li>
+
+            <li className="cursor-pointer">
+              Contact
+            </li>
+
+          </ul>
         )}
+
       </div>
     </nav>
   );

@@ -10,7 +10,7 @@ const Banner = () => {
           <h1 className="text-4xl md:text-5xl font-bold">
             Build Your Ideal
             <br />
-            <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+            <span className="gradient-text">
               Development Stack
             </span>
           </h1>
@@ -22,23 +22,27 @@ const Banner = () => {
           </p>
 
           <div className="flex justify-center md:justify-start gap-4 mt-7">
-            <button className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 text-white px-5 py-2.5 rounded-md text-sm">
+
+            <button className="gradient-brand text-white px-5 py-2.5 rounded-md text-sm">
               Explore Technologies
             </button>
 
             <button className="border border-gray-300 px-5 py-2.5 rounded-md text-sm">
               Learn More
             </button>
+
           </div>
 
         </div>
 
         <div className="w-full md:w-1/2 flex justify-center">
+
           <img
             src={banner}
             alt="Development Stack"
             className="w-72 md:w-full max-w-md"
           />
+
         </div>
 
       </div>
